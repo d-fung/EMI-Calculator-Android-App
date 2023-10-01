@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="306dp"
+        android:layout_height="527dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/principal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Principal amount ($)"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FFFF0000"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/interest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Interest rate (%)"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FFFF0000"
+                android:inputType="number|numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/term"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Term (years)"
+                android:inputType="number"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FFFF0000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="180dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Calculate" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/monthlyText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ECEAEA"
+                android:gravity="center_horizontal"
+                android:text="Monthly Payment ($)"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/totalText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ECEAEA"
+                android:gravity="center_horizontal"
+                android:text="Total Payment ($)"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/monthlyDisplay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ECEAEA"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/totalDisplay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ECEAEA"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hyperlink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="openWebsite"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="*For more information click here." />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="267dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="43dp"
+        android:background="#8BC34A"
+        android:gravity="center"
+        android:text="EMI Calculator"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
