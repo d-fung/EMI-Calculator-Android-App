@@ -17,10 +17,12 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
+    // initialize variables needed for calculation
     int principal;
     double interest;
     int term;
 
+    // initialize references for the inputs
     EditText principalInput;
     EditText interestInput;
     EditText termInput;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // use a try catch block or else the runtime system will abort and close the application if error occurs
                 try{
                     principal = Integer.parseInt(principalInput.getText().toString());
                     interest = Double.parseDouble(interestInput.getText().toString());
@@ -52,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
                     emi = roundToTwoDecimalPlaces(emi);
                     totalPayment = roundToTwoDecimalPlaces(totalPayment);
 
+                    // displays the results to the displays
                     ((TextView) findViewById(R.id.monthlyDisplay)).setText(String.valueOf(emi));
                     ((TextView) findViewById(R.id.totalDisplay)).setText(String.valueOf(totalPayment));
 
+                    // catch exception in case of an error
                 } catch (Exception e){
                     Toast.makeText(MainActivity.this, "Invalid input. Please enter valid numbers.", Toast.LENGTH_SHORT).show();
                 }
@@ -62,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Using intents, refer user to the TD website for more information
     public void openWebsite(View view){
         String websiteUrl = "https://apps.td.com/mortgage-payment-calculator/";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(websiteUrl));
         startActivity(intent);
     }
 
+    // function to calculate EMI given principle, interest, and the term length
     public static double calculateMonthlyPayments(int principal, double interest, int term){
 
         double monthlyInterest = interest / 100 / 12;
@@ -78,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // helper function to round the results to two decimal places
     public static double roundToTwoDecimalPlaces(double number){
         DecimalFormat df = new DecimalFormat("#.##");
         return Double.parseDouble(df.format(number));
