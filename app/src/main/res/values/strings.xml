@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">mortgage_calculator</string>
+    <string name="principal_hint">Principal amount ($)</string>
+    <string name="title_bar">EMI Calculator</string>
+    <string name="interest_hint">Interest rate (%)</string>
+    <string name="term_hint">Term (years)</string>
+    <string name="calculate_text">Calculate</string>
+    <string name="monthly_payment_text">Monthly Payment ($)</string>
+    <string name="total_payment_text">Total Payment ($)</string>
+    <string name="default_number">0</string>
+    <string name="hyperlink_text">*For more information click here.</string>
 </resources>
